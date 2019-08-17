@@ -1,8 +1,8 @@
 %! LuaLaTeX 文書
 \documentclass[report]{dennou777}
 
-\usepackage[unicode]{hyperref}
-\hypersetup{linkcolor=,urlcolor=teal}
+\usepackage[unicode,colorlinks=true]{hyperref}
+\hypersetup{linkcolor=blue,urlcolor=teal}
 
 \usepackage{luatexja}
 \ltjsetparameter{jacharrange={-2,-3,-8}}
@@ -22,7 +22,7 @@
 \usetikzlibrary{plotmarks}
 
 \usepackage[T1]{fontenc}
-\usepackage{amsmath,mathtools,amssymb,mathrsfs,mathabx}
+\usepackage{amsmath,mathtools,amssymb,mathrsfs,mleftright}
 \usepackage[math]{kurier}
 \usepackage[euler-digits]{eulervm}
 \allowdisplaybreaks[4]
@@ -44,11 +44,11 @@
 \begin{document}
 \maketitle
 
-\chapter*{平成 31 年度}
-\section*{問題 I}
+\chapter{平成 31 年度}
+\section{問題 I}
 
-\chapter*{平成 30 年度}
-\section*{問題 I}
+\chapter{平成 30 年度}
+\section{問題 I}
 以下の問 1 から問 2 までの全ての設問に答えよ。
 \subsection*{問 1}
 質量 $m$ の質点が、原点 $O$ から距離 $r$ の位置にあるとき、そのポテンシャル
@@ -56,4 +56,51 @@
 \[ U(r)=-\frac{C}{\alpha-1}\frac{m}{r^{\alpha-1}}\]
 で与えられる中心力場を考える。ここで、 $C$ と $\alpha$ は $C>0, \alpha>1$ を
 満たす定数である。このとき、以下のようにして質点の軌道を求めよ。
+
+\begin{itemize}
+	\item[1-1.] この質点が運動する平面内で、上図のような座標系を
+		考える。質点の位置ベクトルの大きさを $r$、位置ベクトルが
+		$x$ 軸となす角を $\theta$ とする。質点のラグランジアン
+		$\mathscr{L}=\mathscr{L}(r,\theta,\dot{r},\dot{\theta})$
+		を書き下せ。ただし $\dot{r}=dr/dt, \dot{\theta}=d\theta/dt$
+		とする。
+	\item[1-2.] 上で求めたラグランジアンから、$r$ と $\theta$ に関する
+		運動方程式を求めよ。また、角運動量 $L=mr^2\dot{\theta}$ が
+		保存することを示せ。
+	\item[1-3.] $L\neq0$ の場合には、単位質量あたりの角運動量 $l=L/m$ を
+		用いて、時間微分を $\theta$ に関する微分に変換することができる。
+		その結果、$r$ に関する運動方程式は
+		\begin{equation}
+			\frac{d^2}{d\theta^2}\mleft(\frac{1}{r}\mright)+
+			\mleft(1-r^{3-\alpha}\frac{C}{l^2}\mright)\frac{1}{r}=0
+			\label{30-1-1-3}
+		\end{equation}
+		と書けることを示せ。
+	\item[1-4.] $\alpha=3$の場合に、式\eqref{30-1-1-3}の一般解を、$C/l^2$ の
+		値に応じて 3 つの場合に分けて求めよ。
+\end{itemize}
+
+\subsection*{解答 1}
+\begin{itemize}
+	\item[1-1.]
+		\begin{align*}
+			\mathscr{L}&=T-U\qquad\text{（$T$ は運動エネルギー）}\\
+			&=\frac{1}{2}m\mathbold{v}^2-U(r)\\
+			&=\frac{1}{2}m\mleft[\dot{r}^2-(r\dot{\theta})^2\mright]+\frac{C}{\alpha-1}\frac{m}{r^{\alpha-1}}\\
+			&=\frac{1}{2}m\mleft[\dot{r}^2-(r\dot{\theta})^2+\frac{C}{(\alpha-1)r^{\alpha-1}}\mright]
+		\end{align*}
+	\item[1-2.]
+		\begin{align*}
+			\frac{\partial\mathscr{L}}{\partial\dot{r}}
+			&=\frac{1}{2}m\mleft(2\dot{r}\mright)=m\dot{r},\\
+			\frac{\partial\mathscr{L}}{\partial r}
+			&=-\frac{1}{2}\mleft[2\dot{\theta}^2r+2\dot{\theta}^2r+(\alpha-1)\frac{C}{(\alpha-1)r^\alpha}\mright]
+		\end{align*}
+		であるから、$r$ についての運動方程式は、
+		\begin{align*}
+			\frac{d}{dt}\mleft(\frac{\partial\mathscr{L}}{\partial\dot{r}}\mright)-\frac{\partial\mathscr{L}}{\partial r}&=0\\
+			\frac{d}{dt}(m\dot{r})+\frac{1}{2}\mleft[2\dot{\theta}^2r+2\dot{\theta}^2r+(\alpha-1)\frac{C}{(\alpha-1)r^\alpha}\mright]&=0\\
+			m\ddot{r}+\frac{1}{2}m(\alpha-1)\frac{C}{(\alpha-1)r^\alpha}&=0\\
+		\end{align*}
+\end{itemize}
 \end{document}
