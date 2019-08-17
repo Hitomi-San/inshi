@@ -22,9 +22,10 @@
 \usetikzlibrary{plotmarks}
 
 \usepackage[T1]{fontenc}
-\usepackage{amsmath,mathtools,amssymb,mathrsfs,mleftright}
+\usepackage{amsmath,mathtools,amssymb,mathrsfs,rsfso,mleftright}
 \usepackage[math]{kurier}
 \usepackage[euler-digits]{eulervm}
+\usepackage[scaled]{beramono}
 \allowdisplaybreaks[4]
 
 \usepackage[a4paper]{geometry}
@@ -61,7 +62,7 @@
 	\item[1-1.] この質点が運動する平面内で、上図のような座標系を
 		考える。質点の位置ベクトルの大きさを $r$、位置ベクトルが
 		$x$ 軸となす角を $\theta$ とする。質点のラグランジアン
-		$\mathscr{L}=\mathscr{L}(r,\theta,\dot{r},\dot{\theta})$
+		$\mathcal{L}=\mathcal{L}(r,\theta,\dot{r},\dot{\theta})$
 		を書き下せ。ただし $\dot{r}=dr/dt, \dot{\theta}=d\theta/dt$
 		とする。
 	\item[1-2.] 上で求めたラグランジアンから、$r$ と $\theta$ に関する
@@ -84,23 +85,72 @@
 \begin{itemize}
 	\item[1-1.]
 		\begin{align*}
-			\mathscr{L}&=T-U\qquad\text{（$T$ は運動エネルギー）}\\
+			\mathcal{L}&=T-U\qquad\text{（$T$ は運動エネルギー）}\\
 			&=\frac{1}{2}m\mathbold{v}^2-U(r)\\
-			&=\frac{1}{2}m\mleft[\dot{r}^2-(r\dot{\theta})^2\mright]+\frac{C}{\alpha-1}\frac{m}{r^{\alpha-1}}\\
-			&=\frac{1}{2}m\mleft[\dot{r}^2-(r\dot{\theta})^2+\frac{C}{(\alpha-1)r^{\alpha-1}}\mright]
+			&=\frac{1}{2}m\mleft[\dot{r}^2-(r\dot{\theta})^2\mright]+
+				\frac{C}{\alpha-1}\frac{m}{r^{\alpha-1}}.\\
 		\end{align*}
 	\item[1-2.]
+		$r$ についてのラグランジュの運動方程式は、
 		\begin{align*}
-			\frac{\partial\mathscr{L}}{\partial\dot{r}}
-			&=\frac{1}{2}m\mleft(2\dot{r}\mright)=m\dot{r},\\
-			\frac{\partial\mathscr{L}}{\partial r}
-			&=-\frac{1}{2}\mleft[2\dot{\theta}^2r+2\dot{\theta}^2r+(\alpha-1)\frac{C}{(\alpha-1)r^\alpha}\mright]
+			\frac{\partial\mathcal{L}}{\partial\dot{r}}
+			&=\frac{1}{2}m\mleft(2\dot{r}\mright)\\
+			&=m\dot{r},\\
+			\frac{\partial\mathcal{L}}{\partial r}
+			&=-\frac{1}{2}\mleft[2\dot{\theta}^2r
+				+(\alpha-1)\frac{C}{(\alpha-1)r^\alpha}\mright]\\
+			&=m\dot{\theta}^2r-\frac{m}{2}\frac{C}{r^\alpha}
 		\end{align*}
-		であるから、$r$ についての運動方程式は、
+		であるから、
 		\begin{align*}
-			\frac{d}{dt}\mleft(\frac{\partial\mathscr{L}}{\partial\dot{r}}\mright)-\frac{\partial\mathscr{L}}{\partial r}&=0\\
-			\frac{d}{dt}(m\dot{r})+\frac{1}{2}\mleft[2\dot{\theta}^2r+2\dot{\theta}^2r+(\alpha-1)\frac{C}{(\alpha-1)r^\alpha}\mright]&=0\\
-			m\ddot{r}+\frac{1}{2}m(\alpha-1)\frac{C}{(\alpha-1)r^\alpha}&=0\\
+			\frac{d}{dt}\mleft(\frac{\partial\mathcal{L}}{\partial\dot{r}}\mright)
+				-\frac{\partial\mathcal{L}}{\partial r}&=0\\
+			m\ddot{r}-m\dot{\theta}^2r+m\frac{C}{r^\alpha}&=0\\
+			\ddot{r}+Cr^{-\alpha}-\dot{\theta}^2r&=0.
 		\end{align*}
+
+		$\theta$ についてのラグランジュの運動方程式は、
+		\begin{align*}
+			\frac{\partial\mathcal{L}}{\partial\dot{\theta}}
+			&=\frac{1}{2}m(2r^2\dot{\theta})=mr^2\dot{\theta},\\
+			\frac{\partial\mathcal{L}}{\partial\theta}&=0
+		\end{align*}
+		であるから、
+		\begin{align*}
+			\frac{d}{dt}\mleft(\frac{\partial\mathcal{L}}{\partial\dot{\theta}}\mright)
+				-\frac{\partial\mathcal{L}}{\partial\theta}&=0\\
+			\frac{d}{dt}[mr^2\dot{\theta}]&=0.
+		\end{align*}
+
+		ここで、角運動量 $L=mr^2\dot{\theta}$ を用いると、
+		$\theta$ についてのラグランジュの運動方程式は、
+		\[\frac{dL}{dt}=0\]
+		とかけるので、角運動量は保存する。
+	\item[1-3.]
+		$l=L/m=r^2\dot{\theta}$ であるから、$d\theta/dt=l/r^2$ である。
+		これを用いて、$d^2/dt^2$ を計算する。
+
+		\begin{align*}
+			\frac{dr}{dt}&=\frac{dr}{d\theta}\frac{d\theta}{dt}
+				=\frac{l}{r^2}\frac{dr}{d\theta}
+				=l\frac{d}{d\theta}\frac{1}{r},\\
+			\frac{d^2r}{dt^2}&=\frac{d}{dt}\frac{dr}{dt}\\
+			&=\frac{d}{dt}\mleft[-l\frac{d}{d\theta}\frac{1}{r}\mright]\\
+			&=-l\frac{d}{dt}\frac{d}{d\theta}\frac{1}{r}\\
+			&=-l\mleft(\frac{d\theta}{dt}\frac{d}{d\theta}\mright)\frac{d}{d\theta}\frac{1}{r}\\
+			&=-l\frac{l}{r^2}\frac{d^2}{d\theta^2}\frac{1}{r}\\
+			&=-\frac{l^2}{r^2}\frac{d^2}{d\theta^2}\frac{1}{r}
+		\end{align*}
+
+		これを $r$ についてのラグランジュの運動方程式に代入すると、
+		\begin{align*}
+			\frac{d^2r}{dt^2}+Cr^{-\alpha}-\mleft(\frac{d\theta}{dt}\mright)^2&=0\\
+			-\frac{l^2}{r^2}\frac{d^2}{d\theta^2}\frac{1}{r}+Cr^{-\alpha}
+				-\mleft(\frac{l}{r^2}\mright)^2r&=0\\
+			\frac{d^2}{d\theta^2}\frac{1}{r}+C\frac{r^{2-\alpha}}{l^2}-\frac{1}{r}&=0\\
+			\frac{d^2}{d\theta^2}\mleft(\frac{1}{r}\mright)+
+				\mleft(1-r^{3-\alpha}\frac{C}{l^2}\mright)\frac{1}{r}=0
+		\end{align*}
+		となり、式\eqref{30-1-1-3}が得られた。
 \end{itemize}
 \end{document}
