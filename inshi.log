@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019)  (format=lualatex 2019.8.15)  18 AUG 2019 03:22
+This is LuaTeX, Version 1.10.0 (TeX Live 2019)  (format=lualatex 2019.8.15)  18 AUG 2019 06:07
  restricted system commands enabled.
 **inshi.tex
 (./inshi.tex
@@ -2080,12 +2080,12 @@ LaTeX Font Warning: Font shape `TU/fvm/m/n' undefined
 
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
-[1] [2] [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 156.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 156.
+[1] [2] [3] [4]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 202.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 202.
  (./inshi.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 156.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 156.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 202.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 202.
 Package rerunfilecheck Info: File `inshi.out' has not changed.
 (rerunfilecheck)             Checksum: 17A50C0A5C588F828D3E2664C1F1F626;368.
 
@@ -2095,14 +2095,14 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 )
 
 Here is how much of LuaTeX's memory you used:
- 41606 strings out of 494291
+ 41610 strings out of 494291
  125171,953878 words of node,token memory allocated
- 4686 words of node memory still in use:
-   12 hlist, 2 vlist, 6 rule, 2 glue, 23 kern, 8 penalty, 2 glyph, 1146 attribut
-e, 355 glue_spec, 70 attribute_list, 2 write, 15 user_defined nodes
-   avail lists: 1:12,2:36458,3:362,4:326,5:229,6:40,7:2424,8:42,9:1328,10:15,11:
+ 5678 words of node memory still in use:
+   12 hlist, 2 vlist, 6 rule, 2 glue, 25 kern, 16 penalty, 2 glyph, 1426 attribu
+te, 429 glue_spec, 84 attribute_list, 2 write, 15 user_defined nodes
+   avail lists: 1:12,2:36164,3:354,4:345,5:377,6:40,7:2958,8:50,9:1879,10:15,11:
 10
- 44278 multiletter control sequences out of 65536+600000
+ 44279 multiletter control sequences out of 65536+600000
  155 fonts using 116409727 bytes
  65i,13n,91p,8797b,995s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/local/texlive/2019/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.ot
@@ -2110,17 +2110,19 @@ f>{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/kurier/ec-kurier.enc}</usr
 /local/share/fonts/nishiki-teki.ttf></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/
-public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1
-/public/amsfonts/euler/eufm7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1
-/public/amsfonts/euler/eurb10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
-1/public/amsfonts/euler/eurm10.pfb></usr/local/texlive/2019/texmf-dist/fonts/typ
-e1/public/amsfonts/euler/eurm7.pfb></usr/local/texlive/2019/texmf-dist/fonts/typ
-e1/nowacki/kurier/kurierr.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pu
-blic/rsfs/rsfs10.pfb>
-Output written on inshi.pdf (4 pages, 149985 bytes).
+public/amsfonts/euler/euex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1
+/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
+1/public/amsfonts/euler/eufm7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
+1/public/amsfonts/euler/eurb10.pfb></usr/local/texlive/2019/texmf-dist/fonts/typ
+e1/public/amsfonts/euler/eurm10.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
+pe1/public/amsfonts/euler/eurm5.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
+pe1/public/amsfonts/euler/eurm7.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
+pe1/nowacki/kurier/kurierr.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/p
+ublic/rsfs/rsfs10.pfb>
+Output written on inshi.pdf (5 pages, 164141 bytes).
 
-PDF statistics: 100 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
- 9 named destinations out of 1000 (max. 131072)
+PDF statistics: 117 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 131072)
  48 words of extra memory for PDF output out of 10000 (max. 100000000)
 

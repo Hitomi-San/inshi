@@ -51,6 +51,7 @@
 \chapter{平成 30 年度}
 \section{問題 I}
 以下の問 1 から問 2 までの全ての設問に答えよ。
+
 \subsection*{問 1}
 質量 $m$ の質点が、原点 $O$ から距離 $r$ の位置にあるとき、そのポテンシャル
 エネルギーが
@@ -152,5 +153,55 @@
 				\mleft(1-r^{3-\alpha}\frac{C}{l^2}\mright)\frac{1}{r}=0
 		\end{align*}
 		となり、式\eqref{30-1-1-3}が得られた。
+	\item[1-4.]
+		$\alpha=3$ のとき、$C/l^2=\gamma, r^{-1}=R$ とおくと、
+		式\eqref{30-1-1-3}は次のようにかける。
+		\begin{equation}
+			\frac{d^2R}{d\theta^2}-(\gamma-1)R=0\label{30-1-1-4-a}
+		\end{equation}
+
+		ここで、二次方程式 $\lambda^2-(\gamma-1)=0$ の解は、$\lambda=\pm\sqrt{\gamma-1}$
+		である。
+
+		$\gamma=1$ のとき、$\lambda=0$ となって、\eqref{30-1-1-4-a} の解は、
+		$R=c_1\theta+c_2$ となる（$c_1, c_2$ は任意定数）。
+
+		$\gamma\neq1$ のとき、\eqref{30-1-1-4-a} の解は、
+		$R=c_1\exp[\sqrt{\gamma-1}\,\theta]+c_2\exp[-\sqrt{\gamma-1}\,\theta]$
+		となる。
+
+		さらに、$\gamma<1$ のとき、$\sqrt{1-\gamma}=\beta$ とおいて
+		さらに式を変形して、
+		\begin{align*}
+			R&=c_1\exp[\sqrt{\gamma-1}\,\theta]+c_2\exp[-\sqrt{\gamma-1}\,\theta]\\
+			&=c_1\exp[i\beta\theta]+c_2\exp[-i\beta\theta]\\
+			&=\frac{d_1-id_2}{2}\exp[i\beta\theta]+\frac{d_1+id_2}{2}\exp[-i\beta\theta]
+				\qquad\text{（$d_1, d_2$ は任意定数）}\\
+			&=d_1\frac{e^{i\beta\theta}+e^{-i\beta\theta}}{2}
+				-id_2\frac{e^{i\beta\theta}-e^{-i\beta\theta}}{2}\\
+			&=d_1\frac{e^{i\beta\theta}+e^{-i\beta\theta}}{2}
+				+d_2\frac{e^{i\beta\theta}-e^{-i\beta\theta}}{2i}\\
+			&=d_1\cos(\beta\theta)+d_2\sin(\beta\theta)
+		\end{align*}
+
+		以上を整理して、一般解は、
+		\begin{equation}
+			r^{-1}=
+			\begin{cases}
+				c_1\cos\mleft(\sqrt{1-\frac{C}{l^2}}\,\theta\mright)+
+					c_2\sin\mleft(\sqrt{1-\frac{C}{l^2}}\,\theta\mright)
+					&\quad\text{$\frac{C}{l^2}<1$ の場合}\\
+				c_1+c_2\theta
+					&\quad\text{$\frac{C}{l^2}=1$ の場合}\\
+				c_1\exp\mleft(\sqrt{\frac{C}{l^2}-1}\,\theta\mright)+
+					c_2\exp\mleft(-\sqrt{\frac{C}{l^2}-1}\,\theta\mright)
+					&\quad\text{$\frac{C}{l^2}>1$ の場合}
+			\end{cases}
+		\end{equation}
+		である。
 \end{itemize}
+
+\subsection*{問2}
+質量 $m$ の惑星が
+
 \end{document}
