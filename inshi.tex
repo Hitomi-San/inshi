@@ -188,14 +188,14 @@
 		\begin{equation}
 			r^{-1}=
 			\begin{cases}
-				c_1\cos\mleft(\sqrt{1-\frac{C}{l^2}}\,\theta\mright)+
-					c_2\sin\mleft(\sqrt{1-\frac{C}{l^2}}\,\theta\mright)
-					&\quad\text{$\frac{C}{l^2}<1$ の場合}\\
+				c_1\cos\mleft(\sqrt{1-\dfrac{C}{l^2}}\,\theta\mright)+
+					c_2\sin\mleft(\sqrt{1-\dfrac{C}{l^2}}\,\theta\mright)
+					&\quad\text{$C/l^2<1$ の場合}\\
 				c_1+c_2\theta
-					&\quad\text{$\frac{C}{l^2}=1$ の場合}\\
-				c_1\exp\mleft(\sqrt{\frac{C}{l^2}-1}\,\theta\mright)+
-					c_2\exp\mleft(-\sqrt{\frac{C}{l^2}-1}\,\theta\mright)
-					&\quad\text{$\frac{C}{l^2}>1$ の場合}
+					&\quad\text{$C/l^2=1$ の場合}\\
+				c_1\exp\mleft(\sqrt{\dfrac{C}{l^2}-1}\,\theta\mright)+
+					c_2\exp\mleft(-\sqrt{\dfrac{C}{l^2}-1}\,\theta\mright)
+					&\quad\text{$C/l^2>1$ の場合}
 			\end{cases}
 		\end{equation}
 		である。
@@ -226,4 +226,81 @@ $M$ に比べて十分に小さく、この系の重心は恒星の位置と同�
 		定性的に説明せよ。
 \end{itemize}
 
+\subsection*{解答}
+\begin{itemize}
+	\item[2-1.]
+		惑星に働く万有引力は $F=GmM/r^2$ である。惑星の運動の速さを $v$ と
+		すると、円運動をしているので、$F=mv^2/r$ が成り立つ。
+
+		惑星の運動エネルギーは、
+		\[T=\frac{1}{2}mv^2=\frac{1}{2}rF=\frac{GmM}{2r}\]
+	\item[2-2.]
+		はじめの角速度を $\omega$ とすると、
+		\begin{align*}
+			\omega&=\sqrt{\frac{F}{mr}}\\
+			&=\sqrt{\frac{1}{mr}\cdot G\frac{mM}{r^2}}\\
+			&=\frac{1}{r}\sqrt{G\frac{M}{r}}.
+		\end{align*}
+		恒星質量が変化した後の角速度を $\omega'$ とすると、
+		\begin{align*}
+			\omega'&=\sqrt{\frac{F'}{m(r+dr)}}\\
+			&=\sqrt{\frac{1}{m(r+dr)}\cdot G\frac{m(M+dM)}{(r+dr)^2}}\\
+			&=\frac{1}{r+dr}\sqrt{G\frac{M+dM}{r+dr}}.
+		\end{align*}
+	
+		角運動量が保存するので、
+		\begin{align*}
+			mr^2\omega&=m(r+dr)^2\omega'\\
+			r^2\frac{1}{r}\sqrt{G\frac{M}{r}}&=(r+dr)^2\frac{1}{r+dr}\sqrt{G\frac{M+dM}{r+dr}}\\
+			\sqrt{Mr}&=\sqrt{(M+dM)(r+dr)}\\
+			Mr&=(M+dM)(r+dr)\\
+			Mr&=Mr+rdM+Mdr\qquad\text{（$dM$ と $dr$ の積を無視した）}\\
+			\frac{dM}{dr}&=-\frac{M}{r}.
+		\end{align*}
+	\item[2-3.]
+		十分ゆっくりと質量が変化し、つねに $dM/dr=-M/r$ が成り立っているので、
+		$dM$ を $\Delta M=-M_0/2$ と置き換えることができる。この場合、
+		\begin{align*}
+			\frac{dM}{dr}\sim\frac{\Delta M}{\Delta r}&=-\frac{M_0}{r_0}\\
+			\frac{-M_0/2}{\Delta r}&=-\frac{M_0}{r_0}\\
+			\Delta r&=\frac{r_0}{M_0}\cdot\frac{M_0}{2}=\frac{r_0}{2}
+		\end{align*}
+		となって、$r$ の変分は $\Delta r=r_0/2$ である。したがって、軌道半径は
+		$r_0$ の $3/2$ 倍になる。
+	\item[2-4.]
+		恒星質量が瞬間的に減少した場合、惑星に働く向心力が減少し、惑星が軌道の
+		外側に向かって弾き飛ばされる。
+\end{itemize}
+
+\section{問題 II}
+以下の問 1 から問 2 までのすべての設問に答えよ。
+
+\subsection*{問 1}
+真空中に、半径 $a$ の導体円盤 A, B が間隔 $d$ で配置された平行平板コンデンサー
+がある。図 \ref{30-2} に示すように座標軸を取り、導体 B の中心を原点 $O$ とする。
+以下では、真空中の誘電率を $\epsilon_0$、透磁率を $\mu_0$ とする。また、
+$a\gg d$ であり、導体の端における電場の乱れは無視できるとする。
+
+\begin{itemize}
+	\item[1-1.] ガウスの法則を用い、導体間の電場の大きさ $E$ とコンデンサーの
+		静電容量 $C$ を求めよ。
+	\item[1-2.] コンデンサーに蓄えられた静電エネルギー $U$ は導体 A と B の
+		電荷が $0$ から、それぞれ $+Q$ と $-Q$ になるまで導体間で電荷を
+		移動させるのに必要な仕事に等しい。コンデンサーに蓄えられた静電
+		エネルギーは、$U=Q^2/2C$ となることを示せ。
+	\item[1-3.] 導体 A と B がそれぞれ $+Q, -Q$ に帯電しているとき、導体間に
+		働く力の大きさを求めよ。
+	\item[1-4.] それぞれ $+Q, -Q$ に帯電した導体 A, B 間に、自己インダクタンス
+		$L$ のコイルを時刻 $t=0$ に接続した。時刻 $t$ における、導体 A の
+		電荷 $Q(t)$ と導体 A から B へ流れる電流 $I(t)$ を求めよ。ただし
+		コンデンサーの静電容量を $C$ とし、コイル以外の回路のインダクタンス
+		は無視できるものとする。
+	\item[1-5.] このときコイルに蓄えられたエネルギー $(1/2)LI^2$ とコンデンサー
+		に蓄えられたエネルギー $U$ との和が保存することを示せ。
+	\item[1-6.] つぎにコイルを外し、帯電していないコンデンサーに直流電源を接続
+		して、交流電圧 $V(t)=V_0\sin\omega t$ を加えた。導体間に生じる変位電流
+		を求めよ。ただしコンデンサーの静電容量を $C$ とする。
+	\item[1-7.] また、このとき導体 A と導体 B の間の位置 $(x,0,d/2)$ における
+		磁束密度 $B$ を求めよ。ただし $0<x<a$ とする。
+\end{itemize}
 \end{document}
