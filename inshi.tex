@@ -113,15 +113,15 @@
 		\end{align*}
 
 		これを $r$ についてのラグランジュの運動方程式に代入すると、
-		\begin{align*}
-			\frac{d^2r}{dt^2}+Cr^{-\alpha}-\mleft(\frac{d\theta}{dt}\mright)^2&=0\\
+		\begin{align}
+			\frac{d^2r}{dt^2}+Cr^{-\alpha}-\mleft(\frac{d\theta}{dt}\mright)^2&=0\notag\\
 			-\frac{l^2}{r^2}\frac{d^2}{d\theta^2}\frac{1}{r}+Cr^{-\alpha}
-				-\mleft(\frac{l}{r^2}\mright)^2r&=0\\
-			\frac{d^2}{d\theta^2}\frac{1}{r}+C\frac{r^{2-\alpha}}{l^2}-\frac{1}{r}&=0\\
+				-\mleft(\frac{l}{r^2}\mright)^2r&=0\notag\\
+			\frac{d^2}{d\theta^2}\frac{1}{r}+C\frac{r^{2-\alpha}}{l^2}-\frac{1}{r}&=0\notag\\
 			\frac{d^2}{d\theta^2}\mleft(\frac{1}{r}\mright)+
-				\mleft(1-r^{3-\alpha}\frac{C}{l^2}\mright)\frac{1}{r}=0
-		\end{align*}
-		となり、式\eqref{30-1-1-3}が得られた。
+				\mleft(1-r^{3-\alpha}\frac{C}{l^2}\mright)\frac{1}{r}=0\label{30-1-1-3}
+		\end{align}
+		となる。
 	\item[1-4.]
 		$\alpha=3$ のとき、$C/l^2=\gamma, r^{-1}=R$ とおくと、
 		式\eqref{30-1-1-3}は次のようにかける。
@@ -150,20 +150,20 @@
 				-id_2\frac{e^{i\beta\theta}-e^{-i\beta\theta}}{2}\\
 			&=d_1\frac{e^{i\beta\theta}+e^{-i\beta\theta}}{2}
 				+d_2\frac{e^{i\beta\theta}-e^{-i\beta\theta}}{2i}\\
-			&=d_1\cos(\beta\theta)+d_2\sin(\beta\theta)
+			&=d_1\cos[\beta\theta]+d_2\sin[\beta\theta]
 		\end{align*}
 
 		以上を整理して、一般解は、
 		\begin{equation}
 			r^{-1}=
 			\begin{cases}
-				c_1\cos\mleft(\sqrt{1-\dfrac{C}{l^2}}\,\theta\mright)+
-					c_2\sin\mleft(\sqrt{1-\dfrac{C}{l^2}}\,\theta\mright)
+				c_1\cos\mleft[\sqrt{1-\dfrac{C}{l^2}}\,\theta\mright]+
+					c_2\sin\mleft[\sqrt{1-\dfrac{C}{l^2}}\,\theta\mright]
 					&\quad\text{$C/l^2<1$ の場合}\\
 				c_1+c_2\theta
 					&\quad\text{$C/l^2=1$ の場合}\\
-				c_1\exp\mleft(\sqrt{\dfrac{C}{l^2}-1}\,\theta\mright)+
-					c_2\exp\mleft(-\sqrt{\dfrac{C}{l^2}-1}\,\theta\mright)
+				c_1\exp\mleft[\sqrt{\dfrac{C}{l^2}-1}\,\theta\mright]+
+					c_2\exp\mleft[-\sqrt{\dfrac{C}{l^2}-1}\,\theta\mright]
 					&\quad\text{$C/l^2>1$ の場合}
 			\end{cases}
 		\end{equation}
@@ -220,13 +220,72 @@
 
 \subsection{問 1}
 \begin{itemize}
-	\item[1-1]
+	\item[1-1.]
 		導体盤の面電荷密度を $\sigma$ とする。このとき、導体盤 A に直交
-		して、底面積が $S$ であるような円筒面 $S$ についてガウスの法則を
-		適用する。
-		\[\int_S\mathnold{E}_A\cdot d\mathbold{s}=2E_A=\frac{\sigma}{\epsilon_0}=\]
+		して、底面積が $A$ であるような円筒面 $S$ についてガウスの法則を
+		適用すると、導体盤 A から発生する電場 $E_A$ について、
+		\[2AE_A=\int_S\mathbold{E}_A\cdot d\mathbold{s}=\frac{A\sigma}{\epsilon_0}\]
+		が成り立つ。
 
-		同様に、導体盤 B についても、$E_B=\frac{\sigma}{2\epsilon_0}$であるから、
-		$E=E_A+E_B=\sigma/\epsilon_0$。
+		同様に、導体盤 B についても、$E_B=A\sigma/(2\epsilon_0)$で
+		あり、導体盤 A, B 間に発生する電場はいずれも向きが等しいので、
+		$E=E_A+E_B=\sigma/\epsilon_0$ の電場が生じる。
+
+		このとき、コンデンサーには $Q=\sigma\pi a^2$ の電荷が帯電しており、
+		A, B 間の電位差は $V=Ed$ なので、$Q=CV$ の関係から、
+		\[C=\frac{Q}{V}=\frac{\sigma\pi a^2}{\sigma d/\epsilon_0}=\pi\epsilon_0\frac{a^2}{d}\]
+		と求まる。
+	\item[1-2.]
+		コンデンサーがすでに $\pm q$ に帯電しているとき、A B 間をさらに
+		微小電荷 $dq$ を移動させるのに必要な仕事は、$dW=Vdq=qdq/C$ である。
+		両辺を $0$ から $Q$ まで積分すると、$W=Q^2/2C$ となるので、
+		\[U=W=\frac{Q^2}{2C}\]
+		である。
+	\item[1-3.]
+		コンデンサーが $\pm Q$ に帯電しているときに、導体盤を $\Delta r$
+		だけ $z$ 方向に移動させたときに生じる静電エネルギーの差は、
+		\begin{align*}
+			U+\Delta U&=\frac{Q^2}{2(C+\Delta C)}\\
+			&=\frac{Q^2}{2}\frac{d+\Delta r}{\epsilon_0\pi a^2}\\
+			&=\frac{Q^2}{2}\frac{d}{\epsilon_0\pi a^2}\left(1+\frac{\Delta r}{d}\right)\\
+			&=\frac{Q^2}{2C}\left(1+\frac{\Delta r}{d}\right)
+		\end{align*}
+		より、$\Delta U=(Q^2/2C)(\Delta r/d)$ である。
+
+		一方、導体間に働く力を $F$とすると、$\Delta W=F\Delta r$ の仕事
+		が必要になる。$\Delta U=\Delta W$ であるから、
+		\begin{align*}
+			F&=\frac{\Delta W}{\Delta r}\\
+			&=\frac{\Delta U}{\Delta r}\\
+			&=\frac{Q^2}{2C}\frac{\Delta r}{d}\cdot\frac{1}{\Delta r}\\
+			&=\frac{Q^2}{2Cd}\\
+			&=\frac{Q^2}{2\epsilon_0\pi a^2}.
+		\end{align*}
+	\item[1-4.]
+		コイルから生じる起電力は、$V_{\mathrm{L}}=-L\,dI/dt$ である。一方、
+		コンデンサーから生じる起電力は、$V_{\mathrm{C}}=Q/C$ である。回路
+		が閉じているので、それぞれの起電力は等しくなる。
+		\begin{align*}
+			V_{\mathrm{C}}&=V_{\mathrm{L}}\\
+			\frac{Q}{C}&=-L\frac{dI}{dt}\\
+			\frac{Q}{C}&=-L\frac{d^2Q}{dt^2}\\
+			LC\frac{d^2Q}{dt^2}+Q&=0.\qquad\text{（$I=dQ/dt$ の関係を用いた）}
+		\end{align*}
+
+		$Q=e^{\lambda t}$ とおいて、上の微分方程式を解く。
+		\begin{align*}
+			LC\frac{d^2}{dt^2}e^{\lambda t}+e^{\lambda t}&=0\\
+			LC\lambda^2e^{\lambda t}+e^{\lambda t}&=0\\
+			\lambda&=\sqrt{\frac{1}{LC}}i
+		\end{align*}
+		ゆえに、一般解は$Q[t]=c_1\exp[\sqrt{1/LC}\,it]+c_2\exp[-\sqrt{1/LC}\,it]$
+		である。初期条件より、$Q[0]=Q, I[0]=dQ/dt[0]=0$ であるから、
+		$c_1=c_2=Q/2$。ゆえに、
+		\begin{align*}
+			Q[t]&=\frac{Q}{2}\exp\left[\sqrt{\frac{1}{LC}}\,it\right]
+				+\frac{Q}{2}\exp\left[-\sqrt{\frac{1}{LC}}\,it\right]\\
+			&=Q\cos\left[\frac{t}{\sqrt{LC}}\right]\\
+			I[t]=&-\frac{Q}{\sqrt{LC}}\sin\left[\frac{t}{\sqrt{LC}}\right]
+		\end{align*}
 \end{itemize}
 \end{document}
